@@ -1,21 +1,15 @@
 package org.example.lesson_1
 
+const val SECONDS_IN_MINUTE: Byte = 60    // Кол-во секунд в одной минуте
+const val SECONDS_IN_HOUR: Short = 3_600  // Кол-во секунд в одном часе
+
 fun main() {
     val secondsInSpace: Short = 6_480
 
-    val secondsInHour: Short = 3_600
-    val secondsInMinute: Byte = 60
+    val hours = secondsInSpace / SECONDS_IN_HOUR
+    val timeLeft = secondsInSpace % SECONDS_IN_HOUR
+    val minutes = timeLeft / SECONDS_IN_MINUTE
+    val seconds = timeLeft % SECONDS_IN_MINUTE
 
-    val hours = secondsInSpace / secondsInHour
-    val timeLeft = secondsInSpace - hours * secondsInHour
-    val minutes = timeLeft / secondsInMinute
-    val seconds = timeLeft - minutes * secondsInMinute
-
-    print('0')
-    print(hours)
-    print(":")
-    print(minutes)
-    print(":")
-    print('0')
-    print(seconds)
+    println("0$hours:$minutes:0$seconds")
 }
