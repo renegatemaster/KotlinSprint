@@ -11,6 +11,11 @@ const val GREETING_MESSAGE = """
     наверное, об этом не заботитесь. [вздыхает ещё глубже...] Да,
     вперед, пожалуйста, вводите свои данные...
 """
+const val ASK_LOGIN = """
+    Бортовой робот-андроид Марвин печально запрашивает имя
+    пользователя для входа в систему. 
+"""
+const val ASK_PASSWORD = "Введите пароль:"
 const val SUCCESS_MESSAGE = """
     [вздыхает...] Ваши данные проверены, и о, чудо, они верны...
     Пользователь "$REGISTERED_LOGIN", вам разрешено входить на борт
@@ -19,23 +24,28 @@ const val SUCCESS_MESSAGE = """
     [меланхолический вздох...] Надеюсь, вам понравится
     пребывание здесь больше, чем мне.
 """
-const val ERROR_MESSAGE = "Нет совпадений. Хотите пройти регистрацию?"
+const val NO_LOGIN_MESSAGE = "Нет совпадений. Хотите пройти регистрацию?"
+const val WRONG_PASSWORD_MESSAGE = "Неверный пароль"
 
 fun main() {
     println(GREETING_MESSAGE.trimIndent())
 
-    println("Введите логин:")
+    println(ASK_LOGIN.trimIndent())
     val enteredLogin = readln()
-
-    println("Введите пароль:")
-    val enteredPassword = readln()
-
     val isLoginCorrect = enteredLogin == REGISTERED_LOGIN
+
+    if (!isLoginCorrect) {
+        println(NO_LOGIN_MESSAGE)
+        return
+    }
+
+    println(ASK_PASSWORD)
+    val enteredPassword = readln()
     val isPasswordCorrect = enteredPassword == REGISTERED_PASSWORD
 
-    if (isLoginCorrect && isPasswordCorrect) {
+    if (isPasswordCorrect) {
         println(SUCCESS_MESSAGE.trimIndent())
     } else {
-        println(ERROR_MESSAGE)
+        println(WRONG_PASSWORD_MESSAGE)
     }
 }
