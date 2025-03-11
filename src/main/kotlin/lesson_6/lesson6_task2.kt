@@ -4,12 +4,9 @@ import java.lang.Thread
 
 fun main() {
     println("Введите количество секунд, которые нужно засечь:")
-    var seconds = readln().toInt()
-    val totalTime = seconds
+    val seconds = readln().toLong()  // Приводим к Long для функции sleep
 
-    while (seconds > 0) {
-        Thread.sleep(1000)
-        seconds--
-    }
-    println("Прошло $totalTime секунд")
+    Thread.sleep(seconds * 1000)
+
+    println("Прошло $seconds секунд")
 }
