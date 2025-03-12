@@ -4,11 +4,13 @@ const val PASSWORD_LENGTH = 6
 
 fun main() {
     var password = ""
+    val letterRange = 'a'..'z'
+    val numberRange = 0..9
     for (i in 1..PASSWORD_LENGTH) {
         if (i % 2 != 0) {
-            password += ('a'..'z').random()
+            password += letterRange.random()
         } else {
-            password += (0..9).random()
+            password += numberRange.random()
         }
     }
     println(password)
