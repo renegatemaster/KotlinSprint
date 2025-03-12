@@ -4,7 +4,7 @@ import java.lang.Thread
 
 fun main() {
     println("Введите количество секунд, которые нужно засечь:")
-    val seconds = readln().toLong()  // Приводим к Long для функции sleep
+    val seconds = readln().toLong()
 
     Thread.sleep(seconds * 1000)
 
