@@ -1,8 +1,8 @@
 package org.example.lesson_6
 
-const val NUMBER_OF_ATTEMPTS = 3
-const val MIN_NUMBER = 1
-const val MAX_NUMBER = 9
+private const val NUMBER_OF_ATTEMPTS = 3
+private const val MIN_NUMBER = 1
+private const val MAX_NUMBER = 9
 
 fun main() {
     println("Подтвердите, что вы не бот, решив простую задачу")
