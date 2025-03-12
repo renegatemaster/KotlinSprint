@@ -2,9 +2,9 @@ package org.example.lesson_6
 
 import kotlin.random.Random
 
-const val NUMBER_OF_ATTEMPTS = 5
-const val MIN_NUMBER = 1
-const val MAX_NUMBER = 9
+private const val NUMBER_OF_ATTEMPTS = 5
+private const val MIN_NUMBER = 1
+private const val MAX_NUMBER = 9
 
 fun main() {
     val winningNumber = Random.nextInt(MIN_NUMBER, MAX_NUMBER + 1)
