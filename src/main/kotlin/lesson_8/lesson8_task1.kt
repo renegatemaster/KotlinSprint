@@ -19,10 +19,5 @@ fun main() {
         VIEWS_SUNDAY,
     )
 
-    var totalViews = 0
-    for (i in weekViewsArray) {
-        totalViews += i
-    }
-
-    println(totalViews)
+    println(weekViewsArray.sum())
 }
