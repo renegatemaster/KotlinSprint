@@ -18,12 +18,17 @@ fun main() {
     }
 
     var password = ""
+    val variants = 1..3
+    val numberRange = 0..9
+    val lowerLetterRange = 'a'..'z'
+    val upperLetterRange = 'A'..'Z'
+
     for (i in 1..passwordLength) {
-        val randomizer = (1..3).random()
+        val randomizer = variants.random()
         when (randomizer) {
-            1 -> password += (0..9).random()
-            2 -> password += ('a'..'z').random()
-            3 -> password += ('A'..'Z').random()
+            1 -> password += numberRange.random()
+            2 -> password += lowerLetterRange.random()
+            3 -> password += upperLetterRange.random()
         }
     }
 
