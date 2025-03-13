@@ -17,20 +17,22 @@ fun main() {
         }
     }
 
-    var password = ""
+    val passwordList = mutableListOf<Char>()
     val variants = 1..3
-    val numberRange = 0..9
+    val numberRange = '0'..'9'
     val lowerLetterRange = 'a'..'z'
     val upperLetterRange = 'A'..'Z'
 
     for (i in 1..passwordLength) {
         val randomizer = variants.random()
         when (randomizer) {
-            1 -> password += numberRange.random()
-            2 -> password += lowerLetterRange.random()
-            3 -> password += upperLetterRange.random()
+            1 -> passwordList.add(numberRange.random())
+            2 -> passwordList.add(lowerLetterRange.random())
+            3 -> passwordList.add(upperLetterRange.random())
         }
     }
+    passwordList.shuffle()
+    val password = passwordList.joinToString("")
 
     println(password)
 }
