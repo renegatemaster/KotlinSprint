@@ -4,21 +4,21 @@ const val AMOUNT_OF_INGREDIENTS = 5
 
 fun main() {
 
-    val recipe: MutableList<String> = mutableListOf()
+    val recipe: MutableSet<String> = mutableSetOf()
     println("Введите $AMOUNT_OF_INGREDIENTS ингредиентов:")
 
     while (recipe.size < AMOUNT_OF_INGREDIENTS) {
         val ingredient = readln().trim().lowercase()
 
-        if (recipe.indexOf(ingredient) == -1) {
-            recipe.add(ingredient)
-        } else {
+        if (!recipe.add(ingredient)) {
             println("Ингредиент уже существует")
         }
     }
 
-    val sortedRecipe = recipe.sorted().toMutableList()
-    sortedRecipe[0] = sortedRecipe[0].replaceFirstChar { it.uppercase() }
+    val sortedRecipe = recipe.sorted()
 
-    println(sortedRecipe.joinToString(", "))
+    println(sortedRecipe.joinToString(", ") { ingredient ->
+        if (ingredient == sortedRecipe[0]) ingredient.replaceFirstChar { it.uppercase() } else ingredient
+    })
 }
+
