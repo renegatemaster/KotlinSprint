@@ -10,13 +10,14 @@ fun main() {
     val recipe: Array<String> = arrayOf("соль", "сахар", "мука", "яйца", "молоко")
     printRecipe(recipe)
 
-    var ingredientToChange: String
+    var index: Int
 
     while (true) {
         println("Введите название ингредиента, который хотите заменить:")
-        ingredientToChange = readln()
+        val ingredientToChange = readln()
+        index = recipe.indexOf(ingredientToChange)
 
-        if (ingredientToChange in recipe) {
+        if (index != -1) {
             break
         } else {
             println("Пожалуйста, введите существующий ингредиент")
@@ -26,7 +27,6 @@ fun main() {
     println("Введите название ингредиента, который хотите добавить:")
     val newIngredient = readln()
 
-    val index = recipe.indexOf(ingredientToChange)
     recipe[index] = newIngredient
 
     printRecipe(recipe)
