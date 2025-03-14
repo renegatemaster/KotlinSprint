@@ -17,8 +17,6 @@ fun main() {
 
     val sortedRecipe = recipe.sorted()
 
-    println(sortedRecipe.joinToString(", ") { ingredient ->
-        if (ingredient == sortedRecipe[0]) ingredient.replaceFirstChar { it.uppercase() } else ingredient
-    })
+    println(sortedRecipe.joinToString(", ").replaceFirstChar(Char::uppercase))
 }
 
