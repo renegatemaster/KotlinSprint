@@ -9,6 +9,19 @@ fun rollTheDice() : Int {
     return (1..6).random()
 }
 
+fun checkResult(userResult: Int, machineResult: Int) : Boolean {
+    if (userResult > machineResult) {
+        println("Победило человечество")
+        return true
+    } else if (userResult == machineResult) {
+        println("Победила дружба")
+        return false
+    } else {
+        println("Победила машина")
+        return false
+    }
+}
+
 fun playTheGame() : Boolean {
     println("Ход игрока...")
     val userResult = rollTheDice()
@@ -22,16 +35,7 @@ fun playTheGame() : Boolean {
 
     Thread.sleep(1000)
 
-    if (userResult > machineResult) {
-        println("Победило человечество")
-        return true
-    } else if (userResult == machineResult) {
-        println("Победила дружба")
-        return false
-    } else {
-        println("Победила машина")
-        return false
-    }
+    return checkResult(userResult, machineResult)
 }
 
 fun main() {
