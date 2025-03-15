@@ -29,8 +29,8 @@ fun getAuthToken(login: String, password: String) : String? {
     }
 }
 
-fun getCart(token: String?) : String {
-    return if (token != null) "Хлеб, сыр, колбаса" else "Неудачная авторизация"
+fun getCart(token: String) : String {
+    return "Хлеб, сыр, колбаса"
 }
 
 fun main() {
@@ -41,7 +41,7 @@ fun main() {
     val enteredPassword = readln()
 
     val token: String? = getAuthToken(login = enteredLogin, password = enteredPassword)
-    val result = getCart(token = token)
+    val result = if (token != null) getCart(token = token) else "Неудачная авторизация"
 
     println(result)
 }
