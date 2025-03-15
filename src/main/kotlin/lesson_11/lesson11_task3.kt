@@ -32,8 +32,13 @@ class Room(
     }
 
     fun setMemberStatus(nickname: String, newStatus: Status) {
-        val member = this.members.filter { it.nickname == nickname }[0]
-        member.status = newStatus
+        val member = this.members.firstOrNull { it.nickname == nickname }
+
+        if (member != null) {
+            member.status = newStatus
+        } else {
+            println("Участник с никнеймом $nickname не найден")
+        }
     }
 }
 
