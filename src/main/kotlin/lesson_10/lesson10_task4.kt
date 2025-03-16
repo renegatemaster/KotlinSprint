@@ -4,11 +4,6 @@ import java.lang.Thread
 
 const val POSITIVE_ANSWER = "Да"
 
-fun rollTheDice() : Int {
-    Thread.sleep(1000)
-    return (1..6).random()
-}
-
 fun checkResult(userResult: Int, machineResult: Int) : Boolean {
     if (userResult > machineResult) {
         println("Победило человечество")
