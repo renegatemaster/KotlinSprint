@@ -23,7 +23,7 @@ class DayWeather(
 }
 
 fun main() {
-    val dayOne = DayWeather(
+    val dayOne = DailyReport(
         _daytimeTemp = 300,
         _nighttimeTemp = 290,
         _hasPrecipitation = false,
