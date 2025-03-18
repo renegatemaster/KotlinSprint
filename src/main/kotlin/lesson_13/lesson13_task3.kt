@@ -6,12 +6,11 @@ class Person(
     val company: String? = null,
 ) {
     init {
-        this.printData()
+        printData()
     }
-    private val notStated = "<не указано>"
 
     fun printData() {
-        println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: ${company ?: notStated}")
+        println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: ${company ?: "<не указано>"}")
     }
 }
 
@@ -24,6 +23,6 @@ fun main() {
         Person("Оксана", 333_333_33),
     )
 
-    val companies: Set<String?> = (noteBook.map { person -> person.company }).toSet()
+    val companies = noteBook.mapNotNull { person -> person.company }
     println(companies)
 }
