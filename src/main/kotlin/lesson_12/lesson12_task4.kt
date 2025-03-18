@@ -1,6 +1,6 @@
 package org.example.lesson_12
 
-class DayWeather(
+class DailyReport(
     _daytimeTemp: Int,
     _nighttimeTemp: Int,
     _hasPrecipitation: Boolean,
@@ -27,7 +27,7 @@ class DayWeather(
 }
 
 fun main() {
-    val dayOne = DayWeather(
+    val dayOne = DailyReport(
         _daytimeTemp = 300,
         _nighttimeTemp = 290,
         _hasPrecipitation = false,
