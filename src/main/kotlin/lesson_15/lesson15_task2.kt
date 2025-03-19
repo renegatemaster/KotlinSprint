@@ -15,7 +15,13 @@ class PrecipitationAmount(value: Double) : WeatherStationStats(value) {
 }
 
 class WeatherServer {
-    fun sendMessage(forecast: WeatherStationStats) { println(forecast) }
+    fun sendMessage(forecast: WeatherStationStats) {
+        when (forecast) {
+            is Temperature -> println(forecast)
+            is PrecipitationAmount -> println(forecast)
+            else -> return
+        }
+    }
 }
 
 fun main() {
