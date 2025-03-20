@@ -15,6 +15,7 @@ class Player(
     }
 
     fun getDamage(value: Int) {
+        if (isDead) return
         if (health - value <= 0) {
             death()
         } else {
@@ -27,6 +28,7 @@ class Player(
         if (isDead) return
         if (health + value > 10) {
             health = 10
+            println("$name полность восстановлен, здоровье: $health")
         } else {
             health += value
             println("$name восстанавлиает здоровье на $value ед., здоровье: $health")
