@@ -9,12 +9,10 @@ enum class Status {
 class Order(val number: Int) {
     private var status: Status = Status.PLACED
 
-    fun changeStatus(newStatus: Status) { status = newStatus }
+    private fun changeStatus(newStatus: Status) { status = newStatus }
+    fun requestStatusChange(newStatus: Status) { changeStatus(newStatus) }
 }
 
-fun requestStatusChange(order: Order, newStatus: Status) { order.changeStatus(newStatus) }
-
 fun main() {
-    val newOrder = Order(number = 1)
-    requestStatusChange(newOrder, Status.SHIPPED)
+    Order(number = 1).requestStatusChange(Status.SHIPPED)
 }
