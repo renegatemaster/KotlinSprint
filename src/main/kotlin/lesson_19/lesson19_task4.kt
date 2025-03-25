@@ -1,25 +1,24 @@
 package org.example.lesson_19
 
-enum class Ammo(val title: String, val damage: Int) {
-    BLUE("Синие", 5),
-    GREEN("Зелёные", 10),
-    RED("Красные", 20),
-    NO_AMMO("Нет патронов", 0)
+enum class Ammo(val damage: Int) {
+    BLUE(5),
+    GREEN(10),
+    RED(20),
 }
 
-class Tank() {
-    private var ammo: Ammo = Ammo.NO_AMMO
+class Tank {
+    private var ammo: Ammo? = null
 
     fun loadAmmo(newAmmo: Ammo) {
         ammo = newAmmo
     }
 
     fun shoot() {
-        if (ammo == Ammo.NO_AMMO) {
-            println(ammo.title)
+        if (ammo == null) {
+            println("Нет патронов")
             return
         }
-        println(ammo.damage)
+        println(ammo!!.damage)
     }
 }
 
