@@ -1,23 +1,15 @@
 package org.example.lesson_19
 
 enum class ProductCategory {
-    CLOTHES {
-        override fun title(): String {
-            return "одежда"
-        }
-    },
-    STATIONERY {
-        override fun title(): String {
-            return "канцелярские товары"
-        }
-    },
-    MISCELLANEOUS {
-        override fun title(): String {
-            return "разное"
-        }
-    };
+    CLOTHES,
+    STATIONERY,
+    MISCELLANEOUS;
 
-    abstract fun title() : String
+    fun getCategoryName() = when (this) {
+        CLOTHES -> "одежда"
+        STATIONERY -> "канцелярские товары"
+        MISCELLANEOUS -> "разное"
+    }
 }
 
 class Product(
@@ -26,7 +18,7 @@ class Product(
     val category: ProductCategory,
 ) {
     fun printInfo() {
-        println("Товар \"$name\", ID: $id, категория: \"${category.title()}\"")
+        println("Товар \"$name\", ID: $id, категория: \"${category.getCategoryName()}\"")
     }
 }
 
