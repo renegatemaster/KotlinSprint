@@ -2,10 +2,10 @@ package org.example.lesson_19
 
 class SpaceShip() {
     fun takeoff() {
-        TODO("Нужна информация о дополнительной логике")
+        // TODO("Implement takeoff logic")
     }
     fun landing() {
-        TODO("Нужна информация о дополнительной логике")
+        // TODO("Implement landing logic")
     }
 
     fun asteroidShooting() {
