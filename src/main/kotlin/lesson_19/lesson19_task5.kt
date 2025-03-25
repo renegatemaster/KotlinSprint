@@ -36,12 +36,11 @@ fun createPerson(): Person {
     }
 
     var genderShort: String
-    val genderShortList = listOf("м", "ж", "н")
 
     while (true) {
         println("Введите литеру пола (\"м\", \"ж\" или \"н\")")
-        genderShort = readln()
-        if (genderShort in genderShortList) break
+        genderShort = readln().lowercase()
+        if (Gender.entries.any { it.short == genderShort }) break
         println("Неверная литера пола")
     }
 
