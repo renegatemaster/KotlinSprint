@@ -1,9 +1,7 @@
 package org.example.lesson_21
 
 fun List<Int>.evenNumbersSum() : Int {
-    var sum = 0
-    forEach { if (it % 2 == 0) sum += it }
-    return sum
+    return filter { it % 2 == 0 }.sum()
 }
 
 fun main() {
