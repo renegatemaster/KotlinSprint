@@ -1,11 +1,10 @@
 package org.example.lesson_22
 
-data class MainScreenState(
-    var data: String = "",
-    var isLoading: Boolean = false,
-)
-
 class MainScreenViewModel {
+    data class MainScreenState(
+        var data: String = "",
+        var isLoading: Boolean = false,
+    )
     private var state = MainScreenState()
 
     fun loadData() {
